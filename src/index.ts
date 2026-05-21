@@ -7,6 +7,8 @@ import gradientString from "gradient-string";
 
 import { analyzeProject } from "./commands/analyze.js";
 
+import { generateReadme } from "./commands/generate.js";
+
 const program = new Command();
 
 console.log(
@@ -32,4 +34,9 @@ program
   .description("Analyze repository")
   .action(analyzeProject);
 
+program
+  .command("generate")
+  .description("Generate cinematic README")
+  .action(generateReadme);
+  
 program.parse();
