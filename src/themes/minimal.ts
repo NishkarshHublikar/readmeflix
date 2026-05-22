@@ -1,8 +1,9 @@
 import { ProjectData } from "../types.js";
+import { minimalBanner } from "../banners/minimal.js";
 
 export function minimalTheme(data: ProjectData) {
   return `
-# 🚀 ${data.projectName}
+# 🚀 ${minimalBanner(data.projectName)}
 
 ## 📖 Overview
 

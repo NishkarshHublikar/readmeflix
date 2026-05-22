@@ -1,32 +1,24 @@
 
-<div align="center">
+# ✨ readmeflix
 
-# 🎬 readmeflix
-
-### Cinematic README Experience
-
-![License](https://img.shields.io/badge/license-MIT-red)
-
-</div>
+> Elegant README generation for modern developers.
 
 ---
 
-# 🍿 Overview
+## 📖 About
 
 Generate cinematic README files
 
 ---
 
-# 🎥 Tech Stack
+## ⚡ Stack
 
-| Technology | Usage |
-|------------|-------|
-| Unknown | Frontend Framework |
-| TypeScript | Main Language |
+• Unknown  
+• TypeScript
 
 ---
 
-# 🚀 Quick Start
+## 🛠 Setup
 
 ```bash
 npm install
@@ -35,15 +27,11 @@ npm run dev
 
 ---
 
-# 📜 Scripts
+## 📜 Scripts
 
-- `build` → tsc
-- `dev` → ts-node src/index.ts
+- build: `tsc`
+- dev: `ts-node src/index.ts`
 
 ---
 
-<div align="center">
-
-### ⭐ Generated using ReadmeFlix
-
-</div>
+### 🌌 Crafted with ReadmeFlix

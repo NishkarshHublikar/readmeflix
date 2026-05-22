@@ -1,10 +1,11 @@
 import { ProjectData } from "../types.js";
+import { netflixBanner } from "../banners/netflix.js";
 
 export function netflixTheme(data: ProjectData) {
   return `
-<div align="center">
+${netflixBanner(data.projectName)}
 
-# 🎬 ${data.projectName}
+<div align="center">
 
 ### Cinematic README Experience
 

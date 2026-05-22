@@ -1,8 +1,9 @@
 import { ProjectData } from "../types.js";
+import { glassBanner } from "../banners/glass.js";
 
 export function glassTheme(data: ProjectData) {
   return `
-# ✨ ${data.projectName}
+# ✨${glassBanner(data.projectName)}
 
 > Elegant README generation for modern developers.
 

@@ -1,64 +1,49 @@
 
 <div align="center">
 
-# 🎬 NETFLIX STYLE README
+# 🎬 readmeflix
+
+### Cinematic README Experience
+
+![License](https://img.shields.io/badge/license-MIT-red)
 
 </div>
 
 ---
 
-
-# 🚀 readmeflix
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
-
-
-## 📖 Overview
+# 🍿 Overview
 
 Generate cinematic README files
 
+---
 
+# 🎥 Tech Stack
 
-## 🛠 Tech Stack
+| Technology | Usage |
+|------------|-------|
+| Unknown | Frontend Framework |
+| TypeScript | Main Language |
 
-- Unknown
-- TypeScript
+---
 
-
-
-## 📦 Installation
+# 🚀 Quick Start
 
 ```bash
 npm install
-```
-
-## ▶️ Run Locally
-
-```bash
 npm run dev
 ```
 
+---
 
+# 📜 Scripts
 
-## 📜 Available Scripts
-
-| Script | Command |
-|--------|---------|
-| build | `tsc` |
-| dev | `ts-node src/index.ts` |
-
-
-
+- `build` → tsc
+- `dev` → ts-node src/index.ts
 
 ---
 
 <div align="center">
 
-Made with ❤️ using ReadmeFlix
+### ⭐ Generated using ReadmeFlix
 
 </div>
-
----
-
-Made with ❤️ using ReadmeFlix
