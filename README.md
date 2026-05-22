@@ -1,4 +1,11 @@
 
+# ✨ Glassmorphism README
+
+> Elegant. Minimal. Modern.
+
+---
+
+
 # 🚀 readmeflix
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -35,5 +42,8 @@ npm run dev
 
 ---
 
-Made with ❤️ using ReadmeFlix
+## 🌌 Crafted with ReadmeFlix
 
+---
+
+Made with ❤️ using ReadmeFlix

@@ -10,6 +10,10 @@ import { generateTechStack } from "../generators/techstack.js";
 import { generateInstallation } from "../generators/installation.js";
 import { generateFooter } from "../generators/footer.js";
 
+import { minimalTheme } from "../themes/minimal.js";
+import { netflixTheme } from "../themes/netflix.js";
+import { glassTheme } from "../themes/glass.js";
+
 function findPackageJson(startDir: string): string | null {
   let currentDir = startDir;
 
@@ -30,7 +34,7 @@ function findPackageJson(startDir: string): string | null {
   }
 }
 
-export async function generateReadme() {
+export async function generateReadme(options: any) {
   const spinner = ora("Generating cinematic README...").start();
 
   await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -68,7 +72,7 @@ export async function generateReadme() {
 
   if (deps.typescript) language = "TypeScript";
 
-  const markdown = `
+ const baseContent = `
 ${generateHero(projectName)}
 
 ${generateOverview(description)}
@@ -76,9 +80,21 @@ ${generateOverview(description)}
 ${generateTechStack(framework, language)}
 
 ${generateInstallation()}
-
-${generateFooter()}
 `;
+
+let markdown = "";
+
+const theme = options.theme || "minimal";
+
+if (theme === "netflix") {
+  markdown = netflixTheme(baseContent);
+} else if (theme === "glass") {
+  markdown = glassTheme(baseContent);
+} else {
+  markdown = minimalTheme(baseContent);
+}
+
+markdown += generateFooter();
 
   const readmePath = path.join(projectRoot, "README.md");
 
@@ -87,7 +103,7 @@ ${generateFooter()}
     "README.backup.md"
   );
 
-  // Backup existing README
+  // Backup old README
   if (fs.existsSync(readmePath)) {
     fs.copyFileSync(readmePath, backupPath);
   }

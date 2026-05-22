@@ -1,4 +1,13 @@
 
+<div align="center">
+
+# 🎬 NETFLIX STYLE README
+
+</div>
+
+---
+
+
 # 🚀 readmeflix
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -35,5 +44,12 @@ npm run dev
 
 ---
 
+<div align="center">
+
 Made with ❤️ using ReadmeFlix
 
+</div>
+
+---
+
+Made with ❤️ using ReadmeFlix

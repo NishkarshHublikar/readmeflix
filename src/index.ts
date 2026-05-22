@@ -37,6 +37,7 @@ program
 program
   .command("generate")
   .description("Generate cinematic README")
+  .option("-t, --theme <theme>", "README theme")
   .action(generateReadme);
   
 program.parse();
