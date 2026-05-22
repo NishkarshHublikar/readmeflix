@@ -4,17 +4,17 @@ import path from "node:path";
 import ora from "ora";
 import chalk from "chalk";
 
-import { generateHero } from "../generators/hero.js";
+/*import { generateHero } from "../generators/hero.js";
 import { generateOverview } from "../generators/overview.js";
 import { generateTechStack } from "../generators/techstack.js";
 import { generateInstallation } from "../generators/installation.js";
 import { generateFooter } from "../generators/footer.js";
+import { generateScripts } from "../generators/scripts.js";*/
+import { ProjectData } from "../types.js";
 
 import { minimalTheme } from "../themes/minimal.js";
 import { netflixTheme } from "../themes/netflix.js";
 import { glassTheme } from "../themes/glass.js";
-
-import { generateScripts } from "../generators/scripts.js";
 
 function findPackageJson(startDir: string): string | null {
   let currentDir = startDir;
@@ -75,31 +75,25 @@ export async function generateReadme(options: any) {
 
   if (deps.typescript) language = "TypeScript";
 
- const baseContent = `
-${generateHero(projectName)}
-
-${generateOverview(description)}
-
-${generateTechStack(framework, language)}
-
-${generateInstallation()}
-
-${generateScripts(scripts)}
-`;
+ const data: ProjectData = {
+  projectName,
+  description,
+  framework,
+  language,
+  scripts,
+};
 
 let markdown = "";
 
 const theme = options.theme || "minimal";
 
 if (theme === "netflix") {
-  markdown = netflixTheme(baseContent);
+  markdown = netflixTheme(data);
 } else if (theme === "glass") {
-  markdown = glassTheme(baseContent);
+  markdown = glassTheme(data);
 } else {
-  markdown = minimalTheme(baseContent);
+  markdown = minimalTheme(data);
 }
-
-markdown += generateFooter();
 
   const readmePath = path.join(projectRoot, "README.md");
 

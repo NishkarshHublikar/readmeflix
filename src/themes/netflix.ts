@@ -1,20 +1,54 @@
-export function netflixTheme(content: string) {
+import { ProjectData } from "../types.js";
+
+export function netflixTheme(data: ProjectData) {
   return `
 <div align="center">
 
-# 🎬 NETFLIX STYLE README
+# 🎬 ${data.projectName}
+
+### Cinematic README Experience
+
+![License](https://img.shields.io/badge/license-MIT-red)
 
 </div>
 
 ---
 
-${content}
+# 🍿 Overview
+
+${data.description}
+
+---
+
+# 🎥 Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| ${data.framework} | Frontend Framework |
+| ${data.language} | Main Language |
+
+---
+
+# 🚀 Quick Start
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+---
+
+# 📜 Scripts
+
+${Object.entries(data.scripts)
+  .map(([key, value]) => `- \`${key}\` → ${value}`)
+  .join("\n")}
 
 ---
 
 <div align="center">
 
-Made with ❤️ using ReadmeFlix
+### ⭐ Generated using ReadmeFlix
 
 </div>
 `;

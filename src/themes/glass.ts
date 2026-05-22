@@ -1,15 +1,43 @@
-export function glassTheme(content: string) {
+import { ProjectData } from "../types.js";
+
+export function glassTheme(data: ProjectData) {
   return `
-# ✨ Glassmorphism README
+# ✨ ${data.projectName}
 
-> Elegant. Minimal. Modern.
-
----
-
-${content}
+> Elegant README generation for modern developers.
 
 ---
 
-## 🌌 Crafted with ReadmeFlix
+## 📖 About
+
+${data.description}
+
+---
+
+## ⚡ Stack
+
+• ${data.framework}  
+• ${data.language}
+
+---
+
+## 🛠 Setup
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+---
+
+## 📜 Scripts
+
+${Object.entries(data.scripts)
+  .map(([key, value]) => `- ${key}: \`${value}\``)
+  .join("\n")}
+
+---
+
+### 🌌 Crafted with ReadmeFlix
 `;
 }
