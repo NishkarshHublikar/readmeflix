@@ -14,6 +14,8 @@ import { minimalTheme } from "../themes/minimal.js";
 import { netflixTheme } from "../themes/netflix.js";
 import { glassTheme } from "../themes/glass.js";
 
+import { generateScripts } from "../generators/scripts.js";
+
 function findPackageJson(startDir: string): string | null {
   let currentDir = startDir;
 
@@ -56,6 +58,7 @@ export async function generateReadme(options: any) {
     ...packageJson.dependencies,
     ...packageJson.devDependencies,
   };
+  const scripts = packageJson.scripts || {};
 
   const projectName = packageJson.name || "My Project";
 
@@ -80,6 +83,8 @@ ${generateOverview(description)}
 ${generateTechStack(framework, language)}
 
 ${generateInstallation()}
+
+${generateScripts(scripts)}
 `;
 
 let markdown = "";

@@ -1,7 +1,9 @@
 
-# ✨ Glassmorphism README
+<div align="center">
 
-> Elegant. Minimal. Modern.
+# 🎬 NETFLIX STYLE README
+
+</div>
 
 ---
 
@@ -39,10 +41,23 @@ npm run dev
 
 
 
+## 📜 Available Scripts
+
+| Script | Command |
+|--------|---------|
+| build | `tsc` |
+| dev | `ts-node src/index.ts` |
+
+
+
 
 ---
 
-## 🌌 Crafted with ReadmeFlix
+<div align="center">
+
+Made with ❤️ using ReadmeFlix
+
+</div>
 
 ---
 
