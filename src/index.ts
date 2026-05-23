@@ -9,6 +9,8 @@ import { analyzeProject } from "./commands/analyze.js";
 
 import { generateReadme } from "./commands/generate.js";
 
+import { scoreCommand } from "./commands/score.js";
+
 const program = new Command();
 
 console.log(
@@ -39,5 +41,10 @@ program
   .description("Generate cinematic README")
   .option("-t, --theme <theme>", "README theme")
   .action(generateReadme);
-  
+
+program
+  .command("score")
+  .description("Score README quality")
+  .action(scoreCommand)
+
 program.parse();
