@@ -1,49 +1,29 @@
 
-<div align="center">
+# 🚀 readmeflix
 
-# 🎬 readmeflix
-
-### Cinematic README Experience
-
-![License](https://img.shields.io/badge/license-MIT-red)
-
-</div>
-
----
-
-# 🍿 Overview
+## 📖 Overview
 
 Generate cinematic README files
 
 ---
 
-# 🎥 Tech Stack
+## 🛠 Tech Stack
 
-| Technology | Usage |
-|------------|-------|
-| Unknown | Frontend Framework |
-| TypeScript | Main Language |
+- Unknown
+- TypeScript
 
 ---
 
-# 🚀 Quick Start
+## 📦 Installation
 
 ```bash
 npm install
-npm run dev
 ```
 
 ---
 
-# 📜 Scripts
+## ▶️ Run Locally
 
-- `build` → tsc
-- `dev` → ts-node src/index.ts
-
----
-
-<div align="center">
-
-### ⭐ Generated using ReadmeFlix
-
-</div>
+```bash
+npm run dev
+```

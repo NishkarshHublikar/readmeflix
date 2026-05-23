@@ -3,7 +3,7 @@ import { glassBanner } from "../banners/glass.js";
 
 export function glassTheme(data: ProjectData) {
   return `
-# ✨${glassBanner(data.projectName)}
+${glassBanner(data.projectName)}
 
 > Elegant README generation for modern developers.
 

@@ -3,7 +3,7 @@ import { minimalBanner } from "../banners/minimal.js";
 
 export function minimalTheme(data: ProjectData) {
   return `
-# 🚀 ${minimalBanner(data.projectName)}
+${minimalBanner(data.projectName)}
 
 ## 📖 Overview
 
