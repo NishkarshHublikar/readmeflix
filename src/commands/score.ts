@@ -37,15 +37,27 @@ ${result.good
   .map((g) => `[+] ${g}`)
   .join("\n")}
 
+${
+  result.missing.length > 0
+    ? `
 ${chalk.redBright("Missing")}
 ${result.missing
   .map((m) => `[-] ${m}`)
   .join("\n")}
+`
+    : ""
+}
 
+${
+  result.suggestions.length > 0
+    ? `
 ${chalk.yellowBright("Suggestions")}
 ${result.suggestions
   .map((s) => `[tip] ${s}`)
   .join("\n")}
+`
+    : ""
+}
 `;
 
   console.log(

@@ -58,7 +58,7 @@ export function scoreReadme(
     {
       name: "Screenshots",
       regex:
-        /!\[(screenshot|preview|demo).*?\]\(.*?\)/i,
+        /!\[.*?\]\((.*?)\.(png|jpg|jpeg|gif|webp)\)/i,
       points: 20,
       suggestion:
         "Add screenshots inside /screenshots folder",

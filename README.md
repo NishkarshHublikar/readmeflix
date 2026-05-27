@@ -66,13 +66,13 @@ readmeflix score
 |---|---|
 | minimal | Clean and simple |
 | netflix | Cinematic dark README |
-| glass | Modern glassmorphism-inspired layout |
+| glass | Modern developer aesthetic |
 
 ---
 
 ## 📊 README Scoring
 
-ReadmeFlix can intelligently score your README quality.
+ReadmeFlix intelligently scores your README quality.
 
 Checks include:
 
@@ -83,12 +83,6 @@ Checks include:
 - Contributing guide
 - API documentation
 - License section
-
-Example:
-
-```bash
-readmeflix score
-```
 
 ---
 
@@ -117,7 +111,7 @@ readmeflix score
 
 Contributions are welcome!
 
-Feel free to open issues and pull requests.
+Please read the contributing guidelines before submitting pull requests.
 
 ---
 

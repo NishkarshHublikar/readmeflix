@@ -70,25 +70,63 @@ export function analyzeRepository(): RepositoryAnalysis | null {
 
   const features: string[] = [];
 
-  // Framework
-  if (deps.next) framework = "Next.js";
-  else if (deps.react) framework = "React";
-  else if (deps.vue) framework = "Vue";
-  else if (deps.svelte) framework = "Svelte";
+  // Framework Detection
+  if (packageJson.bin) {
+    framework = "Node.js CLI";
+  } else if (deps.next) {
+    framework = "Next.js";
+  } else if (deps.react) {
+    framework = "React";
+  } else if (deps.vue) {
+    framework = "Vue";
+  } else if (deps.svelte) {
+    framework = "Svelte";
+  } else if (deps.express) {
+    framework = "Express";
+  }
 
-  // Language
-  if (deps.typescript) language = "TypeScript";
+  // Language Detection
+  if (deps.typescript) {
+    language = "TypeScript";
+  }
 
-  // Styling
+  // Styling Detection
   if (deps.tailwindcss) {
     styling = "Tailwind CSS";
     features.push("Tailwind CSS");
+  } else if (deps["styled-components"]) {
+    styling = "Styled Components";
+    features.push("Styled Components");
   }
 
-  // Backend
+  // Backend Detection
   if (deps.express) {
     backend = "Express";
     features.push("Express Backend");
+  } else if (deps.fastify) {
+    backend = "Fastify";
+    features.push("Fastify Backend");
+  }
+
+  // CLI Features
+  if (deps.chalk) {
+    features.push("Colorful CLI Output");
+  }
+
+  if (deps.ora) {
+    features.push("Spinner Loader");
+  }
+
+  if (deps.boxen) {
+    features.push("Terminal UI Boxes");
+  }
+
+  if (deps.commander) {
+    features.push("CLI Commands");
+  }
+
+  if (deps.figlet) {
+    features.push("ASCII Art Banner");
   }
 
   // AI
