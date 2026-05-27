@@ -22,6 +22,16 @@
 
 ---
 
+## 📸 Preview
+
+![Analyze](./screenshots/analyze.png)
+
+![Score](./screenshots/score.png)
+
+![Generate](./screenshots/generate.png)
+
+---
+
 ## 📦 Installation
 
 ```bash
@@ -83,16 +93,6 @@ Checks include:
 - Contributing guide
 - API documentation
 - License section
-
----
-
-## 📸 Preview
-
-![Analyze](./screenshots/analyze.png)
-
-![Score](./screenshots/score.png)
-
-![Generate](./screenshots/generate.png)
 
 ---
 
