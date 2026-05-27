@@ -1,38 +1,51 @@
 
-# 🚀 readmeflix
+
+<div align="center">
+
+# 🎬 readmeflix
+
+### CINEMATIC README EXPERIENCE
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+</div>
+
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-## 📖 Overview
+<div align="center">
+
+### Cinematic README Experience
+
+</div>
+
+---
+
+# 🍿 Overview
 
 Generate cinematic README files
 
 ---
 
-## 🛠 Tech Stack
+# 🎥 Tech Stack
 
-- Unknown
-- TypeScript
+| Technology | Usage |
+|------------|-------|
+| Unknown | Frontend Framework |
+| TypeScript | Main Language |
 
 ---
 
-## 📦 Installation
+# 🚀 Quick Start
 
 ```bash
 npm install
-```
-
----
-
-## ▶️ Run Locally
-
-```bash
 npm run dev
 ```
 
 ---
 
-## 📜 Scripts
+# 📜 Scripts
 
 - `build` → tsc
 - `dev` → ts-node src/index.ts
@@ -40,9 +53,19 @@ npm run dev
 ---
 
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 Contributions are welcome!
 
 
-### ⭐ Generated with ReadmeFlix
+<div align="center">
+
+### ⭐ Generated using ReadmeFlix
+
+</div>
+
+## 📸 Preview
+
+![Screenshot](./screenshots/analyze.png)
+
+![Screenshot](./screenshots/score.png)

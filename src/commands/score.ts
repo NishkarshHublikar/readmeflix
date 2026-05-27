@@ -6,9 +6,13 @@ import { analyzeRepository } from "../core/analyzer.js";
 import { scoreReadme } from "../core/scorer.js";
 
 export async function scoreCommand() {
-  const spinner = ora("Analyzing README quality...").start();
+  const spinner = ora(
+    "Analyzing README quality..."
+  ).start();
 
-  await new Promise((resolve) => setTimeout(resolve, 1200));
+  await new Promise((resolve) =>
+    setTimeout(resolve, 1200)
+  );
 
   const analysis = analyzeRepository();
 
@@ -21,20 +25,26 @@ export async function scoreCommand() {
     analysis.projectRoot
   );
 
-  spinner.succeed("README analyzed successfully!");
+  spinner.succeed(
+    "README analyzed successfully!"
+  );
 
   const output = `
 ${chalk.cyanBright("README Score")} : ${result.score}/100
 
 ${chalk.greenBright("Good")}
-${result.good.map((g) => `✔ ${g}`).join("\n")}
+${result.good
+  .map((g) => `[+] ${g}`)
+  .join("\n")}
 
 ${chalk.redBright("Missing")}
-${result.missing.map((m) => `✘ ${m}`).join("\n")}
+${result.missing
+  .map((m) => `[-] ${m}`)
+  .join("\n")}
 
 ${chalk.yellowBright("Suggestions")}
 ${result.suggestions
-  .map((s) => `💡 ${s}`)
+  .map((s) => `[tip] ${s}`)
   .join("\n")}
 `;
 
@@ -42,8 +52,9 @@ ${result.suggestions
     boxen(output, {
       padding: 1,
       margin: 1,
-      borderStyle: "round",
+      borderStyle: "single",
       borderColor: "yellow",
+      width: 60,
     })
   );
 }

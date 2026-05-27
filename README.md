@@ -1,65 +1,134 @@
+# 🎬 ReadmeFlix
 
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![CLI](https://img.shields.io/badge/CLI-Tool-black)
+![Node](https://img.shields.io/badge/node-%3E%3D18-green)
 
-<div align="center">
-
-# 🎬 readmeflix
-
-### CINEMATIC README EXPERIENCE
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-</div>
-
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-blue)
-
-<div align="center">
-
-### Cinematic README Experience
-
-</div>
+> Generate cinematic and intelligent README files automatically.
 
 ---
 
-# 🍿 Overview
+## ✨ Features
 
-Generate cinematic README files
-
----
-
-# 🎥 Tech Stack
-
-| Technology | Usage |
-|------------|-------|
-| Unknown | Frontend Framework |
-| TypeScript | Main Language |
+- 🎬 Cinematic README generation
+- 📊 README quality scoring
+- 🧠 Smart repository analysis
+- 📸 Automatic screenshot detection
+- 🏷 Automatic badge generation
+- 🎨 Multiple README themes
+- 🤝 Contributing guide detection
+- ⚡ Beautiful CLI experience
 
 ---
 
-# 🚀 Quick Start
+## 📦 Installation
 
 ```bash
-npm install
-npm run dev
+npm install -g readmeflix
 ```
 
 ---
 
-# 📜 Scripts
+## 🚀 Usage
 
-- `build` → tsc
-- `dev` → ts-node src/index.ts
+### Analyze Repository
+
+```bash
+readmeflix analyze
+```
+
+### Generate README
+
+```bash
+readmeflix generate --theme netflix
+```
+
+```bash
+readmeflix generate --theme glass
+```
+
+```bash
+readmeflix generate --theme minimal
+```
+
+### Score README Quality
+
+```bash
+readmeflix score
+```
 
 ---
 
+## 🎨 Available Themes
 
-# 🤝 Contributing
+| Theme | Description |
+|---|---|
+| minimal | Clean and simple |
+| netflix | Cinematic dark README |
+| glass | Modern glassmorphism-inspired layout |
+
+---
+
+## 📊 README Scoring
+
+ReadmeFlix can intelligently score your README quality.
+
+Checks include:
+
+- Installation section
+- Usage section
+- Screenshots
+- Tech stack
+- Contributing guide
+- API documentation
+- License section
+
+Example:
+
+```bash
+readmeflix score
+```
+
+---
+
+## 📸 Preview
+
+![Analyze](./screenshots/analyze.png)
+
+![Score](./screenshots/score.png)
+
+![Generate](./screenshots/generate.png)
+
+---
+
+## 🛠 Built With
+
+- TypeScript
+- Node.js
+- Commander.js
+- Chalk
+- Ora
+- Boxen
+
+---
+
+## 🤝 Contributing
 
 Contributions are welcome!
 
+Feel free to open issues and pull requests.
+
+---
+
+## 📜 License
+
+MIT License
+
+---
 
 <div align="center">
 
-### ⭐ Generated using ReadmeFlix
+### ⭐ Crafted with ReadmeFlix
 
 </div>
