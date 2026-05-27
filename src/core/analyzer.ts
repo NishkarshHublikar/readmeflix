@@ -16,6 +16,7 @@ export interface RepositoryAnalysis {
   features: string[];
   
   license: string;
+  hasContributingGuide: boolean;
 }
 
 function findPackageJson(startDir: string): string | null {
@@ -124,6 +125,11 @@ export function analyzeRepository(): RepositoryAnalysis | null {
     packageManager = "yarn";
   }
 
+  const hasContributingGuide =
+    fs.existsSync(
+      path.join(projectRoot, "CONTRIBUTING.md")
+   );
+
   return {
     projectRoot,
     projectName: packageJson.name || "My Project",
@@ -141,5 +147,7 @@ export function analyzeRepository(): RepositoryAnalysis | null {
     features,
 
     license: packageJson.license || "MIT",
+
+    hasContributingGuide,
   };
 }

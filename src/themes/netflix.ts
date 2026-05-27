@@ -6,11 +6,15 @@ export function netflixTheme(data: ProjectData) {
   return `
 ${netflixBanner(data.projectName)}
 
+${generateBadges(
+  data.framework,
+  data.language,
+  data.license
+)}
+
 <div align="center">
 
 ### Cinematic README Experience
-
-![License](https://img.shields.io/badge/license-MIT-red)
 
 </div>
 
@@ -47,6 +51,16 @@ ${Object.entries(data.scripts)
   .join("\n")}
 
 ---
+
+${
+  data.hasContributingGuide
+    ? `
+# 🤝 Contributing
+
+Contributions are welcome!
+`
+    : ""
+}
 
 <div align="center">
 

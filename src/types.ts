@@ -5,4 +5,5 @@ export interface ProjectData {
   language: string;
   scripts: Record<string, string>;
   license: string;
+  hasContributingGuide : boolean;
 }

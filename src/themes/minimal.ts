@@ -38,5 +38,27 @@ npm install
 \`\`\`bash
 npm run dev
 \`\`\`
+
+---
+
+## 📜 Scripts
+
+${Object.entries(data.scripts)
+  .map(([key, value]) => `- \`${key}\` → ${value}`)
+  .join("\n")}
+
+---
+
+${
+  data.hasContributingGuide
+    ? `
+## 🤝 Contributing
+
+Contributions are welcome!
+`
+    : ""
+}
+
+### ⭐ Generated with ReadmeFlix
 `;
 }

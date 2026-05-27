@@ -6,6 +6,12 @@ export function glassTheme(data: ProjectData) {
   return `
 ${glassBanner(data.projectName)}
 
+${generateBadges(
+  data.framework,
+  data.language,
+  data.license
+)}
+
 > Elegant README generation for modern developers.
 
 ---
@@ -39,6 +45,16 @@ ${Object.entries(data.scripts)
   .join("\n")}
 
 ---
+
+${
+  data.hasContributingGuide
+    ? `
+## 🤝 Contributing
+
+Contributions are welcome!
+`
+    : ""
+}
 
 ### 🌌 Crafted with ReadmeFlix
 `;
