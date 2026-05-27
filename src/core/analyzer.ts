@@ -14,12 +14,14 @@ export interface RepositoryAnalysis {
 
   scripts: Record<string, string>;
   features: string[];
-  
+
   license: string;
   hasContributingGuide: boolean;
 }
 
-function findPackageJson(startDir: string): string | null {
+function findPackageJson(
+  startDir: string
+): string | null {
   let currentDir = startDir;
 
   while (true) {
@@ -42,14 +44,20 @@ function findPackageJson(startDir: string): string | null {
   }
 }
 
-export function analyzeRepository(): RepositoryAnalysis | null {
-  const packageJsonPath = findPackageJson(process.cwd());
+export function analyzeRepository():
+  | RepositoryAnalysis
+  | null {
+  const packageJsonPath = findPackageJson(
+    process.cwd()
+  );
 
   if (!packageJsonPath) {
     return null;
   }
 
-  const projectRoot = path.dirname(packageJsonPath);
+  const projectRoot = path.dirname(
+    packageJsonPath
+  );
 
   const packageJson = JSON.parse(
     fs.readFileSync(packageJsonPath, "utf-8")
@@ -81,6 +89,16 @@ export function analyzeRepository(): RepositoryAnalysis | null {
     framework = "Vue";
   } else if (deps.svelte) {
     framework = "Svelte";
+  } else if (deps.angular) {
+    framework = "Angular";
+  } else if (deps.nuxt) {
+    framework = "Nuxt.js";
+  } else if (deps.remix) {
+    framework = "Remix";
+  } else if (deps.astro) {
+    framework = "Astro";
+  } else if (deps.vite) {
+    framework = "Vite";
   } else if (deps.express) {
     framework = "Express";
   }
@@ -94,9 +112,27 @@ export function analyzeRepository(): RepositoryAnalysis | null {
   if (deps.tailwindcss) {
     styling = "Tailwind CSS";
     features.push("Tailwind CSS");
+  } else if (deps.bootstrap) {
+    styling = "Bootstrap";
+    features.push("Bootstrap");
   } else if (deps["styled-components"]) {
     styling = "Styled Components";
     features.push("Styled Components");
+  } else if (deps.sass) {
+    styling = "Sass";
+    features.push("Sass");
+  } else if (
+    deps.materialui ||
+    deps["@mui/material"]
+  ) {
+    styling = "Material UI";
+    features.push("Material UI");
+  } else if (
+    deps.chakraui ||
+    deps["@chakra-ui/react"]
+  ) {
+    styling = "Chakra UI";
+    features.push("Chakra UI");
   }
 
   // Backend Detection
@@ -106,6 +142,27 @@ export function analyzeRepository(): RepositoryAnalysis | null {
   } else if (deps.fastify) {
     backend = "Fastify";
     features.push("Fastify Backend");
+  } else if (
+    deps.nestjs ||
+    deps["@nestjs/core"]
+  ) {
+    backend = "NestJS";
+    features.push("NestJS Backend");
+  } else if (
+    deps.mongodb ||
+    deps.mongoose
+  ) {
+    backend = "MongoDB";
+    features.push("MongoDB Database");
+  } else if (deps.firebase) {
+    backend = "Firebase";
+    features.push("Firebase Backend");
+  } else if (deps.supabase) {
+    backend = "Supabase";
+    features.push("Supabase Backend");
+  } else if (deps.prisma) {
+    backend = "Prisma";
+    features.push("Prisma ORM");
   }
 
   // CLI Features
@@ -138,39 +195,64 @@ export function analyzeRepository(): RepositoryAnalysis | null {
     features.push("AI Integration");
   }
 
-  // Database
-  if (deps.mongodb || deps.mongoose) {
-    features.push("MongoDB Database");
-  }
-
-  if (deps.firebase) {
-    features.push("Firebase Backend");
-  }
-
   // Payments
   if (deps.stripe) {
     features.push("Stripe Payments");
   }
 
-  // Package manager
+  // Authentication
   if (
-    fs.existsSync(path.join(projectRoot, "pnpm-lock.yaml"))
+    deps.jwt ||
+    deps.jsonwebtoken
+  ) {
+    features.push("Authentication System");
+  }
+
+  // Realtime
+  if (
+    deps.socketio ||
+    deps["socket.io"]
+  ) {
+    features.push("Realtime Communication");
+  }
+
+  // Docker
+  if (
+    fs.existsSync(
+      path.join(projectRoot, "Dockerfile")
+    )
+  ) {
+    features.push("Docker Support");
+  }
+
+  // Package Manager
+  if (
+    fs.existsSync(
+      path.join(projectRoot, "pnpm-lock.yaml")
+    )
   ) {
     packageManager = "pnpm";
   } else if (
-    fs.existsSync(path.join(projectRoot, "yarn.lock"))
+    fs.existsSync(
+      path.join(projectRoot, "yarn.lock")
+    )
   ) {
     packageManager = "yarn";
   }
 
   const hasContributingGuide =
     fs.existsSync(
-      path.join(projectRoot, "CONTRIBUTING.md")
-   );
+      path.join(
+        projectRoot,
+        "CONTRIBUTING.md"
+      )
+    );
 
   return {
     projectRoot,
-    projectName: packageJson.name || "My Project",
+    projectName:
+      packageJson.name || "My Project",
+
     description:
       packageJson.description ||
       "A modern software project.",
@@ -184,7 +266,8 @@ export function analyzeRepository(): RepositoryAnalysis | null {
     scripts,
     features,
 
-    license: packageJson.license || "MIT",
+    license:
+      packageJson.license || "MIT",
 
     hasContributingGuide,
   };
