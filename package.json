@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
-    "readmeflix": "./dist/index.js"
+    "readmeflix": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NishkarshHublikar/readmeflix.git"
+    "url": "git+https://github.com/NishkarshHublikar/readmeflix.git"
   },
   "bugs": {
     "url": "https://github.com/NishkarshHublikar/readmeflix/issues"
