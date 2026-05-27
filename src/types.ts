@@ -4,4 +4,5 @@ export interface ProjectData {
   framework: string;
   language: string;
   scripts: Record<string, string>;
+  license: string;
 }

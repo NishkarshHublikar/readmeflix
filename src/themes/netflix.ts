@@ -1,5 +1,6 @@
 import { ProjectData } from "../types.js";
 import { netflixBanner } from "../banners/netflix.js";
+import { generateBadges } from "../generators/badges.js";
 
 export function netflixTheme(data: ProjectData) {
   return `

@@ -14,6 +14,8 @@ export interface RepositoryAnalysis {
 
   scripts: Record<string, string>;
   features: string[];
+  
+  license: string;
 }
 
 function findPackageJson(startDir: string): string | null {
@@ -137,5 +139,7 @@ export function analyzeRepository(): RepositoryAnalysis | null {
 
     scripts,
     features,
+
+    license: packageJson.license || "MIT",
   };
 }

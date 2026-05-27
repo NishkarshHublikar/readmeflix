@@ -1,5 +1,6 @@
 import { ProjectData } from "../types.js";
 import { glassBanner } from "../banners/glass.js";
+import { generateBadges } from "../generators/badges.js";
 
 export function glassTheme(data: ProjectData) {
   return `
