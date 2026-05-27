@@ -31,6 +31,11 @@ ${result.good.map((g) => `✔ ${g}`).join("\n")}
 
 ${chalk.redBright("Missing")}
 ${result.missing.map((m) => `✘ ${m}`).join("\n")}
+
+${chalk.yellowBright("Suggestions")}
+${result.suggestions
+  .map((s) => `💡 ${s}`)
+  .join("\n")}
 `;
 
   console.log(
